@@ -8,12 +8,24 @@
 
 	<properties>
 		<maven.build.timestamp.format>yyyy-MM-dd_HH-mm</maven.build.timestamp.format>
+		<zk.version>8.0.2.2</zk.version>
 	</properties>
 
 	<scm>
 		<developerConnection>scm:git:file://${project.basedir}</developerConnection>
 		<tag>HEAD</tag>
 	</scm>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>org.zkoss.zk</groupId>
+			<artifactId>zkbind</artifactId>
+			<version>${zk.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+	</dependencies>
 
 	<build>
 

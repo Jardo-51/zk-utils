@@ -9,6 +9,11 @@ public class EnumLabelConverter implements Converter<String, Enum<?>, Component>
 
 	@Override
 	public String coerceToUi(Enum<?> beanProp, Component component, BindContext ctx) {
+
+		if (beanProp == null) {
+			return null;
+		}
+
 		String key = String.format("%s.%s", beanProp.getClass().getSimpleName(), beanProp.name());
 		return Labels.getLabel(key, beanProp.name());
 	}

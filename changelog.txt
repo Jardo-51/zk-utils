@@ -1,0 +1,9 @@
+                 Change log for zk-utils
+
+----------------------------------------------------------------
+
+0.2.0 - 2017-12-07
+      - Added argument 'context' to EnumLabelConverter 
+        (displaying different texts in different contexts)
+
+----------------------------------------------------------------

@@ -4,7 +4,7 @@
 
 	<groupId>com.jardoapps</groupId>
 	<artifactId>zk-utils</artifactId>
-	<version>0.2.0-SNAPSHOT</version>
+	<version>0.2.0</version>
 
 	<properties>
 		<maven.build.timestamp.format>yyyy-MM-dd_HH-mm</maven.build.timestamp.format>
@@ -13,7 +13,7 @@
 
 	<scm>
 		<developerConnection>scm:git:file://${project.basedir}</developerConnection>
-		<tag>HEAD</tag>
+		<tag>2017-12-07_15-44_v0.2.0</tag>
 	</scm>
 
 	<dependencies>

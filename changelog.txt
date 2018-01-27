@@ -2,6 +2,11 @@
 
 ----------------------------------------------------------------
 
+0.3.0 - SNAPSHOT
+      - Added static toString(...) methods to EnumLabelConverter so it can be used directly from Java code.
+
+----------------------------------------------------------------
+
 0.2.0 - 2017-12-07
       - Added argument 'context' to EnumLabelConverter 
         (displaying different texts in different contexts)

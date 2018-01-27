@@ -7,15 +7,24 @@ import org.zkoss.zk.ui.Component;
 
 public class EnumLabelConverter implements Converter<String, Enum<?>, Component> {
 
-	@Override
-	public String coerceToUi(Enum<?> beanProp, Component component, BindContext ctx) {
+	public static String toString(Enum<?> value) {
+		return toString(value, null);
+	}
 
-		if (beanProp == null) {
+	public static String toString(Enum<?> value, String context) {
+
+		if (value == null) {
 			return null;
 		}
 
-		String key = getKey(beanProp, ctx);
-		return Labels.getLabel(key, beanProp.name());
+		String key = getKey(value, context);
+		return Labels.getLabel(key, value.name());
+	}
+
+	@Override
+	public String coerceToUi(Enum<?> beanProp, Component component, BindContext ctx) {
+		String contextArg = (String) ctx.getConverterArg("context");
+		return toString(beanProp, contextArg);
 	}
 
 	@Override
@@ -23,9 +32,7 @@ public class EnumLabelConverter implements Converter<String, Enum<?>, Component>
 		throw new UnsupportedOperationException("Not implemented");
 	}
 
-	private String getKey(Enum<?> beanProp, BindContext ctx) {
-
-		String contextArg = (String) ctx.getConverterArg("context");
+	private static String getKey(Enum<?> beanProp, String contextArg) {
 
 		if (contextArg != null) {
 			return String.format("%s[%s].%s", beanProp.getClass().getSimpleName(), contextArg, beanProp.name());
